@@ -123,4 +123,10 @@ app.get('/', async (req, res) => {
         'SELECT * FROM biodata ORDER BY id'
     )
 
-   
+    return successResponse(
+        res,
+        'Data berhasil diambil',
+        result.rows
+    )
+})
+
