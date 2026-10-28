@@ -134,7 +134,7 @@ app.post(
     '/biodata',
     validateBody(biodataSchema),
     async (req, res) => {
-        const { nama, nim, kelas } = req.body
+        const { id, nama, nim, kelas } = req.body
 
         const result = await pool.query(
             `INSERT INTO biodata (id, nama, nim, kelas) 
@@ -185,7 +185,7 @@ app.put(
     }
 )
 
-app.put(
+app.delete(
     '/biodata/:id',
     validateParams(idSchema),
     async (req, res) => {
